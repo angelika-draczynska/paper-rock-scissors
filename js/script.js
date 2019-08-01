@@ -6,9 +6,9 @@ let computerMove = 'nieznany ruch';
 
 if(randomNumber == 1){
   computerMove = 'kamień';
-} else if(randomNumber == 2) {
+} else if(randomNumber == 2){
     computerMove = 'papier';
-} else {
+} else if(randomNumber == 3){
     computerMove = 'nożyce';
 }
 
@@ -24,7 +24,7 @@ if(playerInput == '1'){
   playerMove = 'kamień';
 } else if(playerInput == '2'){
     playerMove = 'papier';
-} else {
+} else if(playerInput == '3'){
     playerMove = 'nożyce';
 }
 
