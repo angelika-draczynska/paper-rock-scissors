@@ -1,52 +1,29 @@
-let randomNumber = Math.floor(Math.random() * 3 + 1);
+function playGame(playerInput) {
+    clearMessages();
+    playerInput;
+    let randomNumber = Math.floor(Math.random() * 3 + 1);
 
-console.log('Wylosowana liczba to: ' + randomNumber);
+    console.log('Wylosowana liczba to: ' + randomNumber);
 
-let computerMove = getMoveName(randomNumber);
+    let computerMove = getMoveName(randomNumber);
+    printMessage('Mój ruch to: ' + computerMove);
 
-/* if (randomNumber === 1) {
-    computerMove = 'kamień';
-} else if (randomNumber === 2) {
-    computerMove = 'papier';
-} else if (randomNumber === 3) {
-    computerMove = 'nożyce';
-} */
+    console.log('Gracz wpisał: ' + playerInput);
 
-printMessage('Mój ruch to: ' + computerMove);
+    let playerMove = getMoveName(playerInput);
+    printMessage('Twój ruch to: ' + playerMove);
 
-let playerInput = prompt('Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce.');
+    displayResult(computerMove, playerMove);
+}
 
-console.log('Gracz wpisał: ' + playerInput);
+document.getElementById('button-1').addEventListener('click', function () {
+    playGame(1);
+});
 
-let playerMove = getMoveName(playerInput);
+document.getElementById('button-2').addEventListener('click', function () {
+    playGame(2);
+});
 
-
-/* if (playerInput === '1') {
-    playerMove = 'kamień';
-} else if (playerInput === '2') {
-    playerMove = 'papier';
-} else if (playerInput === '3') {
-    playerMove = 'nożyce';
-} */
-
-printMessage('Twój ruch to: ' + playerMove);
-
-displayResult(computerMove, playerMove);
-
-/* if (playerMove === 'nieznany ruch') {
-    printMessage('Możesz wpisać tylko liczbę 1, 2 lub 3');
-} else if (computerMove === 'kamień' && playerMove === 'papier') {
-    printMessage('Ty wygrywasz!');
-} else if (computerMove === 'papier' && playerMove === 'nożyce') {
-    printMessage('Ty wygrywasz!');
-} else if (computerMove === 'nożyce' && playerMove === 'kamień') {
-    printMessage('Ty wygrywasz!');
-} else if (computerMove === 'kamień' && playerMove === 'nożyce') {
-    printMessage('Komputer wygrywa');
-} else if (computerMove === 'nożyce' && playerMove === 'papier') {
-    printMessage('Komputer wygrywa!');
-} else if (computerMove === 'papier' && playerMove === 'kamień') {
-    printMessage('Komputer wygrywa!');
-} else {
-    printMessage('Remis!');
-} */
+document.getElementById('button-3').addEventListener('click', function () {
+    playGame(3);
+});

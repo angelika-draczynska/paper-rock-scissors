@@ -1,4 +1,6 @@
 
+
+
 function printMessage(msg) {
 	var div = document.createElement('div');
 	div.innerHTML = msg;
@@ -45,4 +47,5 @@ function displayResult(argComputerMove, argPlayerMove) {
 	} else {
 		printMessage('Remis!');
 	}
-} 
+}
+
