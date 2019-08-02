@@ -1,8 +1,5 @@
-
-
-
 function printMessage(msg) {
-	var div = document.createElement('div');
+	let div = document.createElement('div');
 	div.innerHTML = msg;
 	document.getElementById('messages').appendChild(div);
 }
@@ -12,40 +9,39 @@ function clearMessages() {
 }
 
 function getMoveName(argMoveId) {
-	if (argMoveId == 1) {
-		return 'kamień';
+	if (argMoveId === 1) {
+		return 'rock';
 	}
-	else if (argMoveId == 2) {
-		return 'papier';
+	else if (argMoveId === 2) {
+		return 'paper';
 	}
-	else if (argMoveId == 3) {
-		return 'nożyce';
+	else if (argMoveId === 3) {
+		return 'scissors';
 	}
-	printMessage('Nie znam ruchu o id ' + argMoveId + '.');
-	return 'nieznany ruch';
+	printMessage('I dont know move ID ' + argMoveId + '.');
+	return 'unknown move';
 }
-
 
 function displayResult(argComputerMove, argPlayerMove) {
 	console.log('moves:', argComputerMove, argPlayerMove);
-	printMessage('Zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove);
+	printMessage('I played ' + argComputerMove + ', and You ' + argPlayerMove);
 
-	if (argPlayerMove === 'nieznany ruch') {
-		printMessage('Możesz wpisać tylko liczbę 1, 2 lub 3');
-	} else if (argComputerMove === 'kamień' && argPlayerMove === 'papier') {
-		printMessage('Ty wygrywasz!');
-	} else if (argComputerMove === 'papier' && argPlayerMove === 'nożyce') {
-		printMessage('Ty wygrywasz!');
-	} else if (argComputerMove === 'nożyce' && argPlayerMove === 'kamień') {
-		printMessage('Ty wygrywasz!');
-	} else if (argComputerMove === 'kamień' && argPlayerMove === 'nożyce') {
-		printMessage('Komputer wygrywa');
-	} else if (argComputerMove === 'nożyce' && argPlayerMove === 'papier') {
-		printMessage('Komputer wygrywa!');
-	} else if (argComputerMove === 'papier' && argPlayerMove === 'kamień') {
-		printMessage('Komputer wygrywa!');
+	if (argPlayerMove === 'unknown move') {
+		printMessage('You can type only numbers 1, 2 or 3.');
+	} else if (argComputerMove === 'rock' && argPlayerMove === 'paper') {
+		printMessage('You win!');
+	} else if (argComputerMove === 'paper' && argPlayerMove === 'scissors') {
+		printMessage('You win!');
+	} else if (argComputerMove === 'scissors' && argPlayerMove === 'rock') {
+		printMessage('You win!');
+	} else if (argComputerMove === 'rock' && argPlayerMove === 'scissors') {
+		printMessage('Computer wins!');
+	} else if (argComputerMove === 'scissors' && argPlayerMove === 'paper') {
+		printMessage('Computer wins!');
+	} else if (argComputerMove === 'paper' && argPlayerMove === 'rock') {
+		printMessage('Computer wins!');
 	} else {
-		printMessage('Remis!');
+		printMessage('Draw!');
 	}
 }
 
