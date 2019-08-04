@@ -30,18 +30,23 @@ function displayResult(argComputerMove, argPlayerMove) {
 		printMessage('You can type only numbers 1, 2 or 3.');
 	} else if (argComputerMove === 'rock' && argPlayerMove === 'paper') {
 		printMessage('You win!');
+		state.playerWins = state.playerWins + 1;
 	} else if (argComputerMove === 'paper' && argPlayerMove === 'scissors') {
 		printMessage('You win!');
+		state.playerWins = state.playerWins + 1;
 	} else if (argComputerMove === 'scissors' && argPlayerMove === 'rock') {
 		printMessage('You win!');
+		state.playerWins = state.playerWins + 1;
 	} else if (argComputerMove === 'rock' && argPlayerMove === 'scissors') {
 		printMessage('Computer wins!');
+		state.computerWins = state.computerWins + 1;
 	} else if (argComputerMove === 'scissors' && argPlayerMove === 'paper') {
 		printMessage('Computer wins!');
+		state.computerWins = state.computerWins + 1;
 	} else if (argComputerMove === 'paper' && argPlayerMove === 'rock') {
 		printMessage('Computer wins!');
+		state.computerWins = state.computerWins + 1;
 	} else {
 		printMessage('Draw!');
 	}
 }
-
