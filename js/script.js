@@ -1,3 +1,4 @@
+{
 function playGame(playerInput) {
     clearMessages();
     let randomNumber = Math.floor(Math.random() * 3 + 1);
@@ -37,3 +38,4 @@ document.getElementById('button-2').addEventListener('click', function () {
 document.getElementById('button-3').addEventListener('click', function () {
     playGame(3);
 });
+}
